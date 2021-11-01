@@ -20,16 +20,18 @@ const onClickAdd = () => {
   });
 
   //button(削除)タグを生成
-  const imcompleteButton = document.createElement("button");
-  imcompleteButton.innerText = "削除";
-  imcompleteButton.addEventListener("click", () => {
-    alert();
+  const deleteButton = document.createElement("button");
+  deleteButton.innerText = "削除";
+  deleteButton.addEventListener("click", () => {
+    //押された削除ボタンの親要素(liタグ)を削除する
+    const deleteTarget = deleteButton.parentNode;
+    document.getElementById("imcomplete-list").removeChild(deleteTarget);
   });
 
   //liタグの子要素にタグを追加
   li.appendChild(p);
   li.appendChild(completeButton);
-  li.appendChild(imcompleteButton);
+  li.appendChild(deleteButton);
 
   //未完了リストに追加
   document.getElementById("imcomplete-list").appendChild(li);
