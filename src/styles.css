@@ -57,3 +57,8 @@ ul > li {
   display: flex;
   align-items: center;
 }
+
+li > p {
+  display: inline-block;
+  width: 100px;
+}
